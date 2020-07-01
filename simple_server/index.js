@@ -1,5 +1,5 @@
 /*
- * First, do npm -i http-status-codes -S
+ * First, do npm i http-status-codes -S
  * And, this project executes
 */
 
