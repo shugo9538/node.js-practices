@@ -3,7 +3,7 @@ const routeResponseMap = {
   "/contact" : "<h1>Contact Us</h1>",
   "/about" : "<h1>Learn More About Us.</h1>",
   "/hello" : "<h1>Say Hello by emailing us here</h1>",
-  "/error" : "<h1>Sorry the page you are looking for is not here.</h1>",
+  "/error" : "<h1>404 NOT FOUND.</h1><br><h1>Sorry the page you are looking for is not here.</h1>",
 }
 
 const getJSONString = (obj) => {
@@ -34,6 +34,8 @@ const port = 3000,
     });
 
     if(routeResponseMap[req.url]) {
+      res.end(routeResponseMap[req.url]);
+    } else if(req.url = "/error") {
       res.end(routeResponseMap[req.url]);
     } else {
       setTimeout(() => {
